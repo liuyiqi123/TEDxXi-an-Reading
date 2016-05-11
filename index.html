@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <title>TEDx西安丨十人十本书</title>
+    <meta name="description" content="TEDx西安丨十人十本书，读书实验室" />
+
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<!--slider-->
+<div class="pageslider">
+    <!--      logo-->
+
+    <!--page1-->
+    <div class="row container" id="page1" style="margin-top: 10px;display: block">
+        <div class="row container" style="margin-top: 10px">
+            <img src="image/tedlogo.png" class="img-responsive" style=" width: 50%;left: 20px;margin: 5px">
+        </div>
+        <img src="image/page1.png" class="img-responsive">
+        <img src="image/up.png" class="img-responsive upupup" style=" width:24px;bottom: 20px;">
+    </div>
+    <!--    page2-->
+    <div class="row container" id="page2" style="margin-top: 10px;display: none">
+        <div class="row container" style="margin-top: 10px">
+            <img src="image/tedlogo.png" class="img-responsive" style=" width: 50%;left: 20px;margin: 5px">
+        </div>
+        <img src="image/page2.png" class="img-responsive">
+        <img src="image/up.png" class="img-responsive upupup" style=" width:24px;bottom: 20px;">
+    </div>
+    <!--    page3-->
+    <div class="row container" id="page3" style="margin-top: 10px;display: none">
+        <div class="row container" style="margin-top: 10px">
+            <img src="image/tedlogo.png" class="img-responsive" style=" width: 50%;left: 20px;margin: 5px">
+        </div>
+        <img src="image/page3.png" class="img-responsive">
+        <img src="image/testbtn.png" class="img-responsive rule" style=" width:50%;margin-bottom: 20px">
+        <img src="image/pagebtn.png" class="img-responsive pagebtn upup" style=" width:50%;position: fixed">
+    </div>
+
+
+    <!--    page4-->
+
+    <div class="row container" id="page4" style="margin-top: 10px;display: none">
+        <div class="row container" style="margin-top: 10px">
+            <img src="image/tedlogo.png" class="img-responsive " style=" width: 50%;left: 20px;margin: 5px;float: left">
+            <img src="image/rulebtn.png" class="img-responsive  rule" style=" width: 20%;margin: 5px;float: right">
+        </div>
+        <img src="image/rule.png" class="img-responsive">
+
+    </div>
+
+</div>
+</body>
+<script>
+    $("#submit").click(
+            function(){
+                $('#coment').ajaxSubmit({
+                    type:'post',
+                    url:'coment.php',
+                    success: function (data) {
+                        $("#mymodal").modal("hide");
+
+                    },
+                    error: function (XmlHttpRequest, textStatus, errorThrown) {
+                        alert(XmlHttpRequest);
+                        alert(textStatus);
+                        alert(errorThrown);
+                    }
+                });
+            }
+    );
+
+    $("#urlbook").click(function () {
+        window.location.href="books.php";
+    });
+
+
+    $("#page1").swipe({
+                swipeUp:function(event   ) {
+                    $("#page1").hide();
+                    $("#page2").show();
+
+                }
+
+            }
+
+    );
+
+    $("#page2").swipe({
+                swipeUp:function(event   ) {
+                    $("#page2").hide();
+                    $("#page3").show();
+
+                }
+
+            }
+
+    );
+
+
+    $("#page3").swipe({
+                swipeUp:function(event   ) {
+                    $("#page3").hide();
+                    $(".pagemain").show();
+
+                }
+
+            }
+
+    );
+
+    $(".pagebtn").click(
+            function(){
+                $("#page3").hide();
+                $(".pagemain").show();
+            }
+    );
+
+    var direction='right';
+    (function(){
+        var css={
+            'left':'24%'
+        };
+        if(direction==='right'){
+            direction='left';
+            css.left='26%';
+        }else{
+            direction='right';
+        }
+        $('.upup').animate(css,arguments.callee);
+    })();
+
+
+
+    $(".rule").click(function () {
+        $("#page3").toggle();
+        $("#page4").toggle()
+    });
+
+    $(document).ready(function () {
+        var seth= window.screen.height-20;
+        $("#page1").height(seth);
+        $("#page2").height(seth);
+        $("#page3").height(seth);
+
+    })
+
+</script>
+</html>
