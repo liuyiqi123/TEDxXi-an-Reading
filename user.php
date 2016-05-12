@@ -8,7 +8,7 @@ session_start();
 */
 header("Content-type:text/html;charset=utf-8");
 $code=$_GET['code'];
-$url="https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx77be4299b302c1c1&secret=24ee038f06f328e10dbbc384e40eb57b&code=".$code."&grant_type=authorization_code";
+$url="https://api.weixin.qq.com/sns/oauth2/access_token?appid=未给出&secret=未给出&code=".$code."&grant_type=authorization_code";
 $openidarr=json_decode(gettoken($url),ture);
 
 //print_r($openidarr);
