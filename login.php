@@ -3,7 +3,7 @@ if(isset($_SESSION['open'])){
     echo '<script language="javascript">location.href="http://www.thinkout-art.com/reading/home.php";</script>';
     exit;}
 
-$APPID='wx77be4299b302c1c1';
+$APPID='';
 $REDIRECT_URI='http://www.thinkout-art.com/reading/user.php';
 $scope='snsapi_userinfo';
 //$scope='snsapi_userinfo';//需要授权
