@@ -1,0 +1,44 @@
+.carousel-control .glyphicon{
+    background: gray;
+    padding: 5px;
+}
+
+.carousel-caption {
+    text-shadow: none !important;
+}
+body{
+    background: url("../image/background.jpg") !important;
+}
+.readerimg{
+    background: url("../image/imgback.png");
+    width: 80px;
+    height: 80px;
+}
+.progress{
+background-color: transparent !important;
+    -webkit-border-image: url("../image/proborder.png") 5 5 5 5;
+    -moz-border-image:url("../image/proborder.png") 5 5 5 5 ;
+    -o-border-image:url("../image/proborder.png") 5 5 5 5 ;
+}
+.progress-bar {
+    /*-webkit-border-image: url("../image/proborder.png");*/
+    /*-moz-border-image:url("../image/proborder.png") ;*/
+    /*-o-border-image:url("../image/proborder.png") ;*/
+    color: #080808 !important;
+}
+.progress-bar-success {
+    background-color: transparent !important;
+    -webkit-border-image: url("../image/proback.png") 5 5 5 5;
+    -moz-border-image:url("../image/proback.png") 5 5 5 5 ;
+    -o-border-image:url("../image/proback.png") 5 5 5 5 ;
+}
+.usercoment{
+    border: 20px !important;
+    -webkit-border-image: url("../image/usercoment.png") 10 10 10 10;
+    -moz-border-image:url("../image/usercoment.png") 10 10 10 10 ;
+    -o-border-image:url("../image/usercoment.png") 10 10 10 10 ;
+}
+
+.item img:first-child{
+    width: 40%;
+}
